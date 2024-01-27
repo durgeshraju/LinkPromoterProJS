@@ -1,0 +1,32 @@
+{
+  "name": "linkpromoterprojs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:scss": "node-sass src/scss/main.scss dist/css/main.min.css --output-style compressed",
+    "build:js": "parcel build src/js/main.js --out-dir dist/js",
+    "build:html": "parcel build src/index.html --out-dir dist",
+    "build": "npm run build:scss && npm run build:js && npm run build:html",
+    "watch:scss": "node-sass src/scss/main.scss dist/css/main.min.css --output-style compressed --watch",
+    "watch:js": "parcel watch src/js/main.js --out-dir dist/js",
+    "watch:html": "parcel watch src/index.html --out-dir dist",
+    "watch": "npm run watch:scss & npm run watch:js & npm run watch:html",
+    "start": "parcel start src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/durgeshraju/LinkPromoterProJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/durgeshraju/LinkPromoterProJS/issues"
+  },
+  "homepage": "https://github.com/durgeshraju/LinkPromoterProJS#readme",
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "parcel-bundler": "^1.12.5"
+  }
+}
