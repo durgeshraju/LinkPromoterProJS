@@ -51,3 +51,11 @@
      -moz-border-radius: $radius;       
           border-radius: $radius;
 }
+
+// Circle
+@mixin circle($size, $border-width: 0, $border-color: transparent, $fill-color: transparent) {
+  width: $size;
+  height: $size;
+  background-color: $fill-color;
+  border: $border-width solid $border-color;
+}
