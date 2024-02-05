@@ -1,8 +1,12 @@
 //--->> _scss partials should load here!
 
 // from ./UTILS
+@import 'utils/mixins';
 @import 'utils/variables';
 
 // from ./BASE
 @import 'base/colors';
 @import 'base/reset';
+
+// from ./App
+@import 'app/app_custom.scss';
