@@ -59,3 +59,17 @@
   background-color: $fill-color;
   border: $border-width solid $border-color;
 }
+
+// Mobile Breakpoints
+
+/* -- Mobile: Up to 600px
+-- Tablet: 600px - 768px
+-- Laptop: 768px - 1024px
+-- Desktop: 1024px and above
+*/
+
+@mixin responsive($breakpoint, $min-width, $max-width) {
+  @media (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
