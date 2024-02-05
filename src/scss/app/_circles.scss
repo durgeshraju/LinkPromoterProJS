@@ -1,16 +1,40 @@
 .circle-lined{
      @include circle(40vw, 6px, $circle-bg-primary-lt, $transparent);
      @include border-radius(50%);
+     @include responsive(Mobile, 0, 600px){
+        width: 90vw;
+        height: 90vw;
+     }
+     @include responsive(Tablet, 600px, 768px){
+        width: 80vw;
+        height: 80vw;
+     }
 }
 
 .circle-lined-md{
      @include circle(30vw, 10px, $circle-bg-primary-lt, $transparent);
      @include border-radius(50%);
+     @include responsive(mobile, 0, 600px){
+        width: 70vw;
+        height: 70vw;
+     }
+     @include responsive(Tablet, 600px, 768px){
+        width: 65vw;
+        height: 65vw;
+    }
 }
 
 .circle-solid-md{
     @include circle(25vw, 0, $transparent, $circle-bg-primary-lt);
     @include border-radius(50%);
+    @include responsive(Mobile, 0, 600px){
+        width: 60vw;
+        height: 60vw;
+     }
+    @include responsive(Tablet, 600px, 768px){
+        width: 55vw;
+        height: 55vw;
+    }
 }
 
 .circle-lined,
