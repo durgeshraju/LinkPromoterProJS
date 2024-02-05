@@ -1,0 +1,21 @@
+.circle-lined{
+     @include circle(40vw, 6px, $circle-bg-primary-lt, $transparent);
+     @include border-radius(50%);
+}
+
+.circle-lined-md{
+     @include circle(30vw, 10px, $circle-bg-primary-lt, $transparent);
+     @include border-radius(50%);
+}
+
+.circle-solid-md{
+    @include circle(25vw, 0, $transparent, $circle-bg-primary-lt);
+    @include border-radius(50%);
+}
+
+.circle-lined,
+.circle-lined-md,
+.circle-solid-md {
+    position: absolute;
+    z-index: 1;
+}

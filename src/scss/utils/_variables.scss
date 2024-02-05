@@ -1,3 +1,11 @@
 //------>> Global Variables
 
 $base-font-family: 'Noto Sans', sans-serif;
+
+// <main> section #main-container
+
+#main-container{
+    @include flex-alignment(center, center);
+    height: 100vh;
+    position: relative;
+}
