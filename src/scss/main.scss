@@ -4,9 +4,13 @@
 @import 'utils/mixins';
 @import 'utils/variables';
 
+//---functions
+@import 'base/function';
+
 // from ./BASE
 @import 'base/colors';
 @import 'base/reset';
+@import 'base/typography';
 
 // from ./App
 @import 'app/app_custom.scss';
