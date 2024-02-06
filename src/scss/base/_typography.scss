@@ -5,4 +5,14 @@
     "light": 300,
     "regular": 400,
     "medium": 500
- )
+ );
+p {
+  @include font-style("regular", 0.90, $height: 1.5);
+}
+small {
+  font-size: font-size(0.8);
+  @include font-style("regular", $height: 1.2);
+}
+strong {
+  @include font-style("bold", $height: 1.2);
+}
