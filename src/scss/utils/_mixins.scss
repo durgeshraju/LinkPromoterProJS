@@ -73,3 +73,14 @@
     @content;
   }
 }
+
+// Headings font sizes (h1, h2, h3, h4, h5, h6)
+
+@mixin display-heading-size($size) {
+  $value: map-get($headinig-font-sizes, $size );
+  font-size: $value;
+}
+// -- Usage
+/*h1{
+   @include display-heading-size(h1)
+}*/
