@@ -24,7 +24,3 @@ small {
 strong {
   @include font-style("bold", $height: 1.2);
 }
-
-h2{
-   @include display-heading-size(h2)
-}
