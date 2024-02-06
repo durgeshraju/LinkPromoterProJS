@@ -6,6 +6,14 @@
     "regular": 400,
     "medium": 500
  );
+ $headinig-font-sizes: (
+   h1: 2rem,
+   h2: 1.8rem,
+   h3: 1.5rem,
+   h4: 1.3rem,
+   h5: 1.2rem,
+   h6: 1rem
+ );
 p {
   @include font-style("regular", 0.90, $height: 1.5);
 }
@@ -15,4 +23,8 @@ small {
 }
 strong {
   @include font-style("bold", $height: 1.2);
+}
+
+h2{
+   @include display-heading-size(h2)
 }
