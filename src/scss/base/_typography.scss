@@ -1,26 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
- $font-weights: (
-    "light": 300,
-    "regular": 400,
-    "medium": 500
- );
- $headinig-font-sizes: (
-   h1: 2rem,
-   h2: 1.8rem,
-   h3: 1.5rem,
-   h4: 1.3rem,
-   h5: 1.2rem,
-   h6: 1rem
- );
+$font-weights: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500
+);
+$headinig-font-sizes: (
+  h1: 1.6rem,
+  h2: 1.5rem,
+  h3: 1.4rem,
+  h4: 1.3rem,
+  h5: 1.2rem,
+  h6: 1rem
+);
+
 p {
   @include font-style("regular", 0.90, $height: 1.5);
 }
+
 small {
   font-size: font-size(0.8);
   @include font-style("regular", $height: 1.2);
 }
+
 strong {
   @include font-style("bold", $height: 1.2);
 }
