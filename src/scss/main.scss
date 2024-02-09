@@ -12,5 +12,9 @@
 @import 'base/reset';
 @import 'base/typography';
 
+// from ./Components
+
+@import 'components/card';
+
 // from ./App
 @import 'app/app_custom.scss';
