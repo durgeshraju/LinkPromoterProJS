@@ -12,9 +12,11 @@
 
 @mixin font-style($weight, $multiplier: null, $height: null) {
   @include font-weight($weight);
+
   @if $multiplier {
     font-size: font-size($multiplier);
   }
+
   @if $height {
     @include line-height($height);
   }
@@ -41,15 +43,15 @@
 // Box shadows
 @mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow;
-     -moz-box-shadow: $shadow;       
-          box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
 }
 
 // Border radius
 @mixin border-radius($radius...) {
   -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;       
-          border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
 }
 
 // Circle
@@ -80,6 +82,7 @@
   $value: map-get($headinig-font-sizes, $size );
   font-size: $value;
 }
+
 // -- Usage
 /*h1{
    @include display-heading-size(h1)
@@ -87,8 +90,19 @@
 
 // Flexbox Container
 
-@mixin flexbox-container($direction:null, $wrap:null){
+@mixin flexbox-container($direction: null, $wrap: null) {
   display: flex;
   flex-direction: $direction;
   flex-wrap: $wrap;
+}
+
+// Positions
+
+@mixin position($position: $position, $zIndex: null, $top: null, $bottom: null, $right: null, $left: null) {
+  position: $position;
+  z-index: $zIndex;
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
 }
