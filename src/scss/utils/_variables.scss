@@ -4,8 +4,13 @@ $base-font-family: 'Noto Sans', sans-serif;
 
 // <main> section #main-container
 
-#main-container{
+#main-container {
     @include flex-alignment(center, center);
     height: 100vh;
     position: relative;
 }
+
+//------>> Component Card
+$c-body-space-inside: 1.555rem;
+$h-header-space-bottom: 1.333rem;
+$h-title-lg-space-bottom : 0.655rem;
