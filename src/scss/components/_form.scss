@@ -1,0 +1,46 @@
+select,
+input {
+    font-family: $base-font-family;
+    border: 1px solid $gray;
+    @include border-radius(6px);
+    padding: 0.655rem;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    color: $graydk;
+}
+
+.form {
+    font-family: $base-font-family;
+    @include font-style("regular", $height: 1.2);
+    font-size: 14px;
+
+    &__field {
+        margin-bottom: $fieldspacingY;
+    }
+
+    &__actions {
+        @include flexbox-container(row, wrap);
+        margin: 0.35rem 0;
+        gap: 3.222%;
+    }
+
+    &__button {
+        padding-top: 0.655rem;
+        padding-bottom: 0.655rem;
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+        line-height: $lh-1-5;
+        @include border-radius(6px);
+        cursor: pointer;
+
+        &--primary {
+            background-color: $primary;
+            color: $white;
+
+            &:hover {
+                background-color: $primary-400;
+            }
+        }
+    }
+}
