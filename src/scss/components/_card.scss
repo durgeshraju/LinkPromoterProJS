@@ -29,6 +29,7 @@
         &--large {
             @include display-heading-size(h2);
             padding-bottom: $h-title-lg-space-bottom;
+            font-family: $headinig-font-family;
         }
     }
 }
