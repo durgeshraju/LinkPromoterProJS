@@ -25,14 +25,29 @@
                     <h2 class="card__header-title card__header-title--large">Promote a Link</h2>
                     <p class="card__header-subtitle">Promote any brand with a simple link</p>
                 </header>
-                <form class="card__from">
-                    form content comes here
+                <form class="form">
+                    <div class="form__field">
+                        <select name="theme-style" id="themeDropdown" class="form__select">
+                            <option selected>Select Your Style</option>
+                            <option value="classic">Classic</option>
+                            <option value="modern">Modern</option>
+                            <option value="elegant">Elegant</option>
+                        </select>
+                    </div>
+                    <div class="form__field">
+                        <input type="url" id="urlInput" class="form__input" placeholder="Enter a website URL">
+                    </div>
+                    <div class="form__actions">
+                        <button type="button" id="btnCreate" class="form__button form__button--primary"
+                            disabled>Create</button>
+                        <button type="button" class="form__button form__button--advanced">Advanced</button>
+                    </div>
                 </form>
             </div>
         </div>
         <!--Card Create Link end-->
     </main>
 </body>
-<script src="js/main.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
 </html>
