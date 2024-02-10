@@ -1,0 +1,16 @@
+// Margin spacing
+
+$my-spacing: (
+    my-1: 2rem,
+    my-2: 1.8rem,
+    my-3: 1.5rem,
+    my-4: 1.3rem,
+    my-5: 1.2rem,
+    my-6: 1rem
+);
+
+@mixin my-spacing($my-spacer) {
+    $value: map-get($my-spacing, $my-spacer);
+    margin-top: $value;
+    margin-bottom: $value;
+}

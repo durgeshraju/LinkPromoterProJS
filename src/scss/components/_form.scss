@@ -21,7 +21,7 @@ input {
 
     &__actions {
         @include flexbox-container(row, wrap);
-        margin: 0.35rem 0;
+        @include my-spacing(my-1);
         gap: 3.222%;
     }
 
