@@ -1,0 +1,30 @@
+.btn-hr-wrapper {
+    @include flexbox-container(row, wrap);
+    @include my-spacing(my-1);
+    gap: 3.222%;
+}
+
+.btn {
+    padding-top: 0.655rem;
+    padding-bottom: 0.655rem;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    line-height: $lh-1-5;
+    @include border-radius(6px);
+    cursor: pointer;
+
+    &--primary {
+        background-color: $primary;
+        color: $white;
+
+        &:hover {
+            background-color: $primary-400;
+        }
+
+        &:disabled {
+            background-color: $primary-100;
+            cursor: no-drop;
+            color: $graylt;
+        }
+    }
+}
