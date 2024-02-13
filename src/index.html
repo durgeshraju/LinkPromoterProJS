@@ -25,10 +25,10 @@
                     <h2 class="card__header-title card__header-title--large">Promote a Link</h2>
                     <p class="card__header-subtitle">Promote any brand with a simple link</p>
                 </header>
-                <form class="form">
+                <form class="form" id="promoteLinkForm">
                     <div class="form__field">
                         <select name="theme-style" id="themeDropdown" class="form__select">
-                            <option selected>Select Your Style</option>
+                            <option value="" selected>Select Your Style</option>
                             <option value="classic">Classic</option>
                             <option value="modern">Modern</option>
                             <option value="elegant">Elegant</option>
@@ -38,7 +38,7 @@
                         <input type="url" id="urlInput" class="form__input" placeholder="Enter a website URL">
                     </div>
                     <div class="btn-hr-wrapper">
-                        <button type="button" id="btnCreate" class="btn btn--primary" disabled>Create</button>
+                        <button type="submit" id="btnCreate" class="btn btn--primary" disabled>Create</button>
                         <button type="button" class="btn btn--advanced">Advanced</button>
                     </div>
                 </form>
