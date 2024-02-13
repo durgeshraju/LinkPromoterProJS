@@ -1,18 +1,20 @@
 select,
 input {
     font-family: $base-font-family;
-    border: 1px solid $gray;
+    border: 1px solid $primary-100;
     @include border-radius(6px);
-    padding: 0.655rem;
+    padding: 0.755rem;
     width: 100%;
     box-sizing: border-box;
     outline: none;
     color: $graydk;
+    @include font-style("regular", $height: 1.2);
+    color: $primary;
 }
 
 .form {
     font-family: $base-font-family;
-    @include font-style("regular", $height: 1.2);
+    @include font-style("medium", $height: 1.2);
     font-size: 14px;
 
     &__field {
