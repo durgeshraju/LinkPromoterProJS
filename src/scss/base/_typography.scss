@@ -27,3 +27,8 @@ small {
 strong {
   @include font-style("bold", $height: 1.2);
 }
+
+::placeholder {
+  color: $primary-200;
+  opacity: 1;
+}
