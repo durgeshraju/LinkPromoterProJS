@@ -27,3 +27,26 @@ selectBrandTheme.addEventListener('change', checkFormValidity);
 
 // Initial check in case the form is pre-filled or for browser auto-fill
 checkFormValidity();
+
+const populatePromoteCard = (formData) => {
+  const protocolSelectDropdown = document.getElementById('protocolDropdown');
+  const displayBrandName = document.getElementById('brandNameDisplay');
+  const setProtocol = formData.url.startsWith('https://')
+    ? 'https://'
+    : 'http://';
+  protocolSelectDropdown.value = setProtocol;
+  displayBrandName.value = formData.theme;
+  const sharePromotionLink = setProtocol + formData.url;
+};
+
+getFormPromoteLink.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const urlValue = getInputUrl.value.trim();
+  const themeValue =
+    selectBrandTheme.options[selectBrandTheme.selectedIndex].text;
+  const formData = {
+    url: urlValue,
+    theme: themeValue,
+  };
+  populatePromoteCard(formData);
+});
