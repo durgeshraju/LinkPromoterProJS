@@ -45,10 +45,11 @@
             </div>
         </div>
         <!--Card Create Link end-->
-
+        <div id="modalBackdrop" class="modal-backdrop d-none"></div>
         <!--Card Create Promote start-->
         <div class="card d-none" id="promoteModal">
             <div class="card__body">
+                <i class="fa-regular fa-square-xmark"></i>
                 <header class="card__header">
                     <h2 class="card__header-title card__header-title--large">Promote</h2>
                     <p class="card__header-subtitle">Use this link to promote.<br> Link updates may take up to 5 minutes
@@ -64,6 +65,9 @@
                     </div>
                     <div class="form__field">
                         <input type="text" id="brandNameDisplay" class="form__input" readonly>
+                    </div>
+                    <div class="btn-hr-wrapper">
+                        <button type="button" id="btnCloseDialog" class="btn btn--primary">Close</button>
                     </div>
                 </form>
             </div>

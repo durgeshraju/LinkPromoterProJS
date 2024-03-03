@@ -1,6 +1,7 @@
 //--->> This is mostly for the application related
 @import 'local-variables';
 @import 'circles';
+@import 'promote';
 
 //-- Dsiplay stuff will be use for 'Hide / Show'
 
@@ -10,4 +11,14 @@
 
 .d-none {
     display: none;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
 }

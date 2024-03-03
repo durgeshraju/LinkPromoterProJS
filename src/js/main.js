@@ -8,6 +8,15 @@ const getFormPromoteLink = document.getElementById('promoteLinkForm');
 const getInputUrl = document.getElementById('urlInput');
 const selectBrandTheme = document.getElementById('themeDropdown');
 
+// Open Modal Dailog
+
+const openModal = () => {
+  const modal = document.getElementById('promoteModal');
+  const overlay = document.getElementById('modalBackdrop');
+  modal.classList.remove('d-none');
+  overlay.classList.replace('d-none', 'd-block');
+};
+
 // Function to check if both input and select conditions are met
 const checkFormValidity = () => {
   const inputUrlValue = getInputUrl.value.trim(); // Get trimmed value of the input
@@ -37,6 +46,7 @@ const populatePromoteCard = (formData) => {
   protocolSelectDropdown.value = setProtocol;
   displayBrandName.value = formData.theme;
   const sharePromotionLink = setProtocol + formData.url;
+  openModal();
 };
 
 getFormPromoteLink.addEventListener('submit', (event) => {
