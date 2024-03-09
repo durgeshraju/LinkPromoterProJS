@@ -8,14 +8,38 @@ const getFormPromoteLink = document.getElementById('promoteLinkForm');
 const getInputUrl = document.getElementById('urlInput');
 const selectBrandTheme = document.getElementById('themeDropdown');
 
-// Open Modal Dailog
+// Grab Modal Dailog Nodes
+const closeDialogBtn = document.querySelectorAll('.close-dialog');
+const modal = document.getElementById('promoteModal');
+const overlay = document.getElementById('modalBackdrop');
 
+// Open Modal Dailog
 const openModal = () => {
-  const modal = document.getElementById('promoteModal');
-  const overlay = document.getElementById('modalBackdrop');
-  modal.classList.remove('d-none');
+  modal.classList.replace('d-none', 'd-block');
   overlay.classList.replace('d-none', 'd-block');
 };
+
+const closeModal = () => {
+  closeDialogBtn.forEach((closeBtn) => {
+    closeBtn.addEventListener('click', (event) => {
+      if (event.target) {
+        modal.classList.replace('d-block', 'd-none');
+        overlay.classList.replace('d-block', 'd-none');
+      }
+    });
+  });
+};
+
+// URL Regex pattren for the validation
+function isValidUrl(urlString) {
+  const pattern =
+    /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+  return pattern.test(urlString);
+}
+
+// Hide and Show Error Message
+
+const showErrorMessage = () => {};
 
 // Function to check if both input and select conditions are met
 const checkFormValidity = () => {
@@ -43,10 +67,18 @@ const populatePromoteCard = (formData) => {
   const setProtocol = formData.url.startsWith('https://')
     ? 'https://'
     : 'http://';
+
+  if (!isValidUrl(formData.url)) {
+    return;
+  }
+
   protocolSelectDropdown.value = setProtocol;
   displayBrandName.value = formData.theme;
-  const sharePromotionLink = setProtocol + formData.url;
+  const cleanUrl = formData.url.replace(/^https?:\/\//, ''); // Remove 'http://' or 'https://'
+  const sharePromotionLink = setProtocol + cleanUrl;
+  console.log(sharePromotionLink);
   openModal();
+  closeModal();
 };
 
 getFormPromoteLink.addEventListener('submit', (event) => {
@@ -58,5 +90,10 @@ getFormPromoteLink.addEventListener('submit', (event) => {
     url: urlValue,
     theme: themeValue,
   };
-  populatePromoteCard(formData);
+  if (isValidUrl(formData.url)) {
+    populatePromoteCard(formData);
+  } else {
+    let urlErrorMessage = document.getElementById('urlErrorMessage');
+    urlErrorMessage.classList.remove('d-none');
+  }
 });

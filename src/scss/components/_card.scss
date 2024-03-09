@@ -25,6 +25,11 @@
         color: $primary;
     }
 
+    &__header-toolbar {
+        @include flex-alignment(space-between, center);
+
+    }
+
     &__header-title {
         &--large {
             @include display-heading-size(h2);
