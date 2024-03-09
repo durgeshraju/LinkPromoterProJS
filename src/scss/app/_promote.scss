@@ -5,3 +5,7 @@
 .error-message {
     color: $error;
 }
+
+.input-error {
+    border: 1px solid $error;
+}
