@@ -37,9 +37,19 @@ function isValidUrl(urlString) {
   return pattern.test(urlString);
 }
 
-// Hide and Show Error Message
+// Function to display or hide an error message
 
-const showErrorMessage = () => {};
+const displayErrorMessage = (elementId, isValid, message) => {
+  const errorMessageElement = document.getElementById(elementId);
+  if (errorMessageElement) {
+    if (isValid) {
+      errorMessageElement.classList.add('d-none');
+    } else {
+      errorMessageElement.textContent = message;
+      errorMessageElement.classList.remove('d-none');
+    }
+  }
+};
 
 // Function to check if both input and select conditions are met
 const checkFormValidity = () => {
@@ -67,16 +77,11 @@ const populatePromoteCard = (formData) => {
   const setProtocol = formData.url.startsWith('https://')
     ? 'https://'
     : 'http://';
-
-  if (!isValidUrl(formData.url)) {
-    return;
-  }
-
   protocolSelectDropdown.value = setProtocol;
   displayBrandName.value = formData.theme;
-  const cleanUrl = formData.url.replace(/^https?:\/\//, ''); // Remove 'http://' or 'https://'
+  const cleanUrl = formData.url.replace(/^https?:\/\//, ''); // Remove 'http://' or 'https://
   const sharePromotionLink = setProtocol + cleanUrl;
-  console.log(sharePromotionLink);
+  // TODO: Attach sharePromotionLink to your share button or logic
   openModal();
   closeModal();
 };
@@ -93,7 +98,10 @@ getFormPromoteLink.addEventListener('submit', (event) => {
   if (isValidUrl(formData.url)) {
     populatePromoteCard(formData);
   } else {
-    let urlErrorMessage = document.getElementById('urlErrorMessage');
-    urlErrorMessage.classList.remove('d-none');
+    displayErrorMessage(
+      'urlErrorMessage',
+      false,
+      'Invalid URL. Please enter a valid website address.'
+    );
   }
 });
